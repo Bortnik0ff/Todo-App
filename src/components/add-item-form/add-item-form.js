@@ -3,22 +3,39 @@ import React, { Component } from 'react'
 import './add-item-form.css'
 
 export default class AddItemForm extends Component {
+
+  state = {
+    label: ''
+  }
+
+  onLabelChange = (e) => {
+    this.setState({
+      label: e.target.value
+    })
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault()
+    this.props.onItemAdded(this.state.label)
+    this.setState({
+      label: ''
+    })
+  }
   
   render(){
-    const { onItemAdded } = this.props;
     return (
-      <div className="input-group mt-3">
+      <form className="input-group mt-3"
+            onSubmit={this.onSubmit}>
         <input type="text" 
                className="form-control" 
                placeholder="add new task" 
-               aria-label="add new task"
-               aria-describedby="button-addon2" />
+               onChange={this.onLabelChange}
+               value={this.state.label} />
         <div className="input-group-append">
           <button className="btn btn-info" 
-                  type="button"
-                  onClick={() => onItemAdded('New Task added')}>Add</button>
+                  type="submit">Add</button>
         </div>
-      </div>
+      </form>
     )
   }
 }
