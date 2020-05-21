@@ -1,3 +1,4 @@
 Todo Application on clear React
-![Todo-List-React](https://user-images.githubusercontent.com/45894469/82563372-a20af380-9b7f-11ea-8a62-c9bb2f8eba4c.gif)
+
+![Todo-List-React-v2](https://user-images.githubusercontent.com/45894469/82564051-c61b0480-9b80-11ea-9be6-52ae6f7dc9e2.gif)
 ------
